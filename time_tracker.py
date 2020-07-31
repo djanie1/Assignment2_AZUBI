@@ -56,8 +56,8 @@ print('Nana spent %f %s on project %s' % (hours_of_project,'hours', Project_name
 print('Nana will receive %s %f for project %s' % (currency,total_amount_received, Project_name))
 
 
-# Install pip on laptop
-# With pip installed, install xlsxwriter on laptop
+# Install pip on laptop terminal
+# With pip installed, install xlsxwriter on laptop terminal
 # This helps save information in an Excel file.
 
 import xlsxwriter 
