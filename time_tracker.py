@@ -5,7 +5,7 @@ from datetime import timedelta
 import datetime
 
 
-#import pandas as pd
+
 
 #function to remove white spaces from project name to be used as the excel file name
 def remove(string): 
@@ -53,8 +53,6 @@ total_time.grid(column=0,row=7)
 total_amount = Label(window, text="You have earned ($):", font=("Arial", 20),background='white')
 total_amount.grid(column=0,row=9)
 
-#total_time = Label(window, font=("Arial", 10),background='white')
-#total_time.grid(column=0,row=10)
 
 #function that stores your stop time and takes your start time and calculates your earnings
 def end_work():
