@@ -35,15 +35,12 @@ def start_time():
     return started_time
    
     
-#Start button
-#btn = Button(window, text="START",command=calculate_date_time,background='white')
-#btn.grid(column=0, row=2)
+
 
 Project = Label(window, text="Enter project name", font=("Arial Bold", 10),background='white')
 Project.grid(column=0, row=4)
 
-#lbl5 = Label(window, text="Amount per hour:", font=("Arial", 10),background='white')
-#lbl5.grid(column=0, row=5)
+
 
 #variable that holds how much he earns
 name = Entry(window,width=40)
