@@ -4,6 +4,10 @@
 from datetime import datetime
 
 
+def remove(string): 
+	return string.replace(" ", "")     #removes spaces in project name to store output file as "projectname.xlsx" without spaces
+
+
 Project_name = input ('Enter name of project:')
 
 
@@ -61,7 +65,7 @@ print('Nana will receive %s %f for project %s' % (currency,total_amount_received
 # This helps save information in an Excel file.
 
 import xlsxwriter 
-workbook = xlsxwriter.Workbook('ProjectHistroy.xlsx') 
+workbook = xlsxwriter.Workbook(remove(Project_name)+".xlsx") 
 worksheet = workbook.add_worksheet() 
 
 #Setting Headers
