@@ -1,4 +1,4 @@
-# Write a program that would help Nana track his money.
+# Time tracker app
 
 from tkinter import *
 from datetime import timedelta
@@ -6,18 +6,18 @@ import datetime
 
 
 
-
 #function to remove white spaces from project name to be used as the excel file name
 def remove(string): 
 	return string.replace(" ", "")     #removes spaces in project name to store output file as "projectname.xlsx" without spaces
 
+#create Graphical User Interface window
 window = Tk()
 #window.title("TIME TRACKER")
 window.geometry('285x480')
 window.configure(bg='white')
 
 
-
+#greeting and basic instruction
 greeting= Label(window, text="Welcome Nana, click Start to start timer", font=("Arial Bold", 10),background='white')
 greeting.grid(column=0, row=1)
 
@@ -36,13 +36,12 @@ def start_time():
    
     
 
-
 Project = Label(window, text="Enter project name", font=("Arial Bold", 10),background='white')
 Project.grid(column=0, row=4)
 
 
 
-#variable that holds how much he earns
+#saves project name entered in window and stores in a variable
 name = Entry(window,width=40)
 name.grid(column=0, row=6)
 name.focus()
@@ -54,7 +53,8 @@ total_amount = Label(window, text="You have earned ($):", font=("Arial", 20),bac
 total_amount.grid(column=0,row=9)
 
 
-#function that stores your stop time and takes your start time and calculates your earnings
+
+#Ends the timer, claculates amount earned and hours worked, saves output to excel file
 def end_work():
     
     global end_time
@@ -76,18 +76,18 @@ def end_work():
     hour_end = delta2.total_seconds()/3600
    
     
-    #amount he earns
+    #Get project name
     Project_name=str(name.get())
     
     
     hours_worked=round(hour_end-hour_start,1)
     total_pay= hours_worked*float(5)
     
-    #displays the hours spent working
+    #display hours worked and amount earned
     total_time.configure(text=str(hours_worked)+("Hrs"))
     total_amount.configure(text=("$")+str(total_pay))
     
-
+	#store data to excel file
     import xlsxwriter 
     workbook = xlsxwriter.Workbook(remove(Project_name)+".xlsx") 
     worksheet = workbook.add_worksheet() 
